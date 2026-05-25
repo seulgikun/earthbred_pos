@@ -34,3 +34,9 @@ Route::post('/checkout', [OrderController::class, 'store']);
 
 Route::get('/queue', [OrderController::class, 'index']);
 Route::patch('/orders/{id}/status', [OrderController::class, 'updateStatus']);
+
+use App\Http\Controllers\ShiftNoteController;
+
+Route::get('/shift-notes', [ShiftNoteController::class, 'index']);
+Route::post('/shift-notes', [ShiftNoteController::class, 'store']);
+Route::patch('/shift-notes/{id}/done', [ShiftNoteController::class, 'markDone']);

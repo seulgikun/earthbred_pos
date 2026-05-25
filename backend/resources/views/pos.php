@@ -46,7 +46,7 @@
                     <li class="menu-item" data-filter="chicken-tenders">
                         <span class="menu-icon">🍗</span> Chicken Tenders
                     </li>
-                    <li class="menu-item" data-filter="shift-notes">
+                    <li class="menu-item" onclick="window.location.href='/Earthbred/backend/public/shift-notes'">
                         <span class="menu-icon">📝</span> Shift Notes
                     </li>
                     <li class="menu-item" onclick="window.location.href='/Earthbred/backend/public/queue'" style="border-top: 1px solid #e5d9c5; margin-top: 0.5rem; padding-top: 1rem;">
