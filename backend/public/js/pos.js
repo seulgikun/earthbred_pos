@@ -32,10 +32,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     menuItems.forEach(item => {
         item.addEventListener('click', () => {
+            // Skip inventory — it navigates via onclick in HTML
+            if (item.id === 'inventory-menu-item') return;
+
             menuItems.forEach(i => i.classList.remove('active'));
             item.classList.add('active');
 
+            document.querySelector('.product-grid').style.display = 'grid';
+            const mainOrderBtn = document.querySelector('.order-btn');
+            if (mainOrderBtn) mainOrderBtn.style.display = 'flex';
+
             const filterValue = item.getAttribute('data-filter');
+            if (!filterValue) return;
             
             productCards.forEach(card => {
                 if (filterValue === 'all' || filterValue === 'shift-notes') {
@@ -276,4 +284,6 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => toast.remove(), 300);
         }, 2000);
     }
+
 });
+

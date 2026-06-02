@@ -32,5 +32,11 @@ class DatabaseSeeder extends Seeder
             'email' => 'owner@earthbred.com',
             'password' => bcrypt('password'),
             'role' => 'owner',
-        ]);    }
+        ]);
+
+        $this->call([
+            InventorySeeder::class,
+            OrderSampleSeeder::class,
+        ]);
+    }
 }

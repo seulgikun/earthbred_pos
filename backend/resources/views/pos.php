@@ -7,6 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="<?= asset('css/pos.css') ?>">
+    <meta name="csrf-token" content="<?= csrf_token() ?>">
+
 </head>
 <body>
     <div class="app-container">
@@ -51,6 +53,9 @@
                     </li>
                     <li class="menu-item" onclick="window.location.href='/Earthbred/backend/public/queue'" style="border-top: 1px solid #e5d9c5; margin-top: 0.5rem; padding-top: 1rem;">
                         <span class="menu-icon">📋</span> Order Queuing
+                    </li>
+                    <li class="menu-item" id="inventory-menu-item" onclick="window.location.href='/Earthbred/backend/public/inventory'" style="border-top: 1px solid #e5d9c5; margin-top: 0.5rem; padding-top: 1rem;">
+                        <span class="menu-icon">📦</span> Inventory
                     </li>
                 </ul>
             </nav>
@@ -170,6 +175,7 @@
                 </div>
 
             </div>
+
         </main>
     </div>
 
@@ -234,7 +240,9 @@
             </div>
         </div>
     </div>
+
+
     
-    <script src="<?= asset('js/pos.js') ?>"></script>
+    <script src="<?= asset('js/pos.js') ?>?v=<?= time() ?>"></script>
 </body>
 </html>

@@ -46,8 +46,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Simulate API call for now
                 setTimeout(() => {
-                    // Redirect to the Point of Sale dashboard
-                    window.location.href = '/Earthbred/backend/public/pos';
+                    const lowerEmail = email.toLowerCase().trim();
+                    if (lowerEmail.includes('manager') || lowerEmail.includes('owner')) {
+                        window.location.href = '/Earthbred/backend/public/manager';
+                    } else {
+                        window.location.href = '/Earthbred/backend/public/pos';
+                    }
                 }, 800);
                 
             } catch (error) {

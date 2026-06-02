@@ -40,3 +40,20 @@ use App\Http\Controllers\ShiftNoteController;
 Route::get('/shift-notes', [ShiftNoteController::class, 'index']);
 Route::post('/shift-notes', [ShiftNoteController::class, 'store']);
 Route::patch('/shift-notes/{id}/done', [ShiftNoteController::class, 'markDone']);
+
+use App\Http\Controllers\ManagerController;
+use App\Http\Controllers\InventoryController;
+
+Route::get('/inventory', function () {
+    return view('inventory');
+});
+
+Route::get('/manager', [ManagerController::class, 'index']);
+Route::get('/api/manager/stats', [ManagerController::class, 'getStats']);
+
+Route::get('/api/inventory', [InventoryController::class, 'index']);
+Route::post('/api/inventory', [InventoryController::class, 'storeItem']);
+Route::post('/api/inventory/{id}/add', [InventoryController::class, 'addStock']);
+Route::post('/api/inventory/{id}/edit', [InventoryController::class, 'editStock']);
+Route::get('/api/inventory/logs', [InventoryController::class, 'getLogs']);
+
