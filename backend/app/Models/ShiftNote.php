@@ -9,5 +9,5 @@ class ShiftNote extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['note', 'cashier_name', 'is_done'];
+    protected $fillable = ['note', 'cashier_name', 'category', 'is_done'];
 }

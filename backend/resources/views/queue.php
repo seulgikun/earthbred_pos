@@ -9,6 +9,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="<?= asset('css/pos.css') ?>">
     <link rel="stylesheet" href="<?= asset('css/queue.css') ?>">
+    <style>
+        body {
+            display: block !important;
+            height: 100vh !important;
+            overflow: hidden !important;
+            background-color: #222 !important;
+        }
+        .app-container {
+            display: flex !important;
+            width: 100% !important;
+            height: 100vh !important;
+        }
+    </style>
 </head>
 <body>
     <div class="app-container">
@@ -28,18 +41,39 @@
             </div>
 
             <nav class="menu-section">
-                <h3 class="menu-heading">NAVIGATION</h3>
+                <h3 class="menu-heading">MENU</h3>
                 <ul class="menu-list">
                     <li class="menu-item" onclick="window.location.href='/Earthbred/backend/public/pos'">
-                        <span class="menu-icon">🍽️</span> POS View
+                        <span class="menu-icon">🍽️</span> All Items
                     </li>
-                    <li class="menu-item active" style="border-top: 1px solid #e5d9c5; margin-top: 0.5rem; padding-top: 1rem;">
+                    <li class="menu-item" onclick="window.location.href='/Earthbred/backend/public/pos?filter=coffee'">
+                        <span class="menu-icon">☕</span> Coffee
+                    </li>
+                    <li class="menu-item" onclick="window.location.href='/Earthbred/backend/public/pos?filter=non-coffee'">
+                        <span class="menu-icon">🍵</span> Non-Coffee
+                    </li>
+                    <li class="menu-item" onclick="window.location.href='/Earthbred/backend/public/pos?filter=lemonade'">
+                        <span class="menu-icon">🍹</span> Lemonade
+                    </li>
+                    <li class="menu-item" onclick="window.location.href='/Earthbred/backend/public/pos?filter=rice-bowls'">
+                        <span class="menu-icon">🍲</span> Rice Bowls
+                    </li>
+                    <li class="menu-item" onclick="window.location.href='/Earthbred/backend/public/pos?filter=chicken-tenders'">
+                        <span class="menu-icon">🍗</span> Chicken Tenders
+                    </li>
+                    <li class="menu-item" onclick="window.location.href='/Earthbred/backend/public/shift-notes'">
+                        <span class="menu-icon">📝</span> Shift Notes
+                    </li>
+                    <li class="menu-item active" onclick="window.location.href='/Earthbred/backend/public/queue'" style="border-top: 1px solid #e5d9c5; margin-top: 0.5rem; padding-top: 1rem;">
                         <span class="menu-icon">📋</span> Order Queuing
+                    </li>
+                    <li class="menu-item" id="inventory-menu-item" onclick="window.location.href='/Earthbred/backend/public/inventory'" style="border-top: 1px solid #e5d9c5; margin-top: 0.5rem; padding-top: 1rem;">
+                        <span class="menu-icon">📦</span> Inventory
                     </li>
                 </ul>
             </nav>
 
-            <div class="clock-out" onclick="window.location.href='/Earthbred/backend/public/login'">
+            <div class="clock-out" onclick="if(confirm('Are you sure you want to clock out?')) { localStorage.removeItem('earthbred_cart'); window.location.href = '/Earthbred/backend/public/login'; }">
                 <i class="fa-solid fa-power-off"></i> Clock Out
             </div>
         </aside>

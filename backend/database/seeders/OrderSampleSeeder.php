@@ -35,8 +35,8 @@ class OrderSampleSeeder extends Seeder
 
         $now = Carbon::now();
 
-        // Let's generate orders for the last 7 days (including today)
-        for ($i = 6; $i >= 0; $i--) {
+        // Let's generate orders for the last 30 days (including today)
+        for ($i = 29; $i >= 0; $i--) {
             $date = Carbon::now()->subDays($i);
             
             // On weekends (Sat/Sun) let's have more sales.

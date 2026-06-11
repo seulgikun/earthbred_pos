@@ -17,6 +17,7 @@ class CreateShiftNotesTable extends Migration
             $table->id();
             $table->text('note');
             $table->string('cashier_name')->nullable();
+            $table->string('category')->default('General');
             $table->boolean('is_done')->default(false);
             $table->timestamps();
         });

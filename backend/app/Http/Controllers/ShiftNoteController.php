@@ -15,19 +15,21 @@ class ShiftNoteController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'note' => 'required|string'
+            'note' => 'required|string',
+            'category' => 'required|string|in:General,Equipment,Complaint,Task'
         ]);
 
         // Default cashier name if not using proper auth yet
-        $cashierName = 'Aries Marolina';
+        $cashierName = 'Aries Maroliña';
 
         \App\Models\ShiftNote::create([
             'note' => $request->note,
             'cashier_name' => $cashierName,
+            'category' => $request->category,
             'is_done' => false
         ]);
 
-        return redirect('/shift-notes');
+        return redirect()->back();
     }
 
     public function markDone($id)
@@ -36,6 +38,6 @@ class ShiftNoteController extends Controller
         $note->is_done = true;
         $note->save();
 
-        return redirect('/shift-notes');
+        return redirect()->back();
     }
 }

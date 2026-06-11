@@ -7,7 +7,7 @@
     <meta name="description" content="Earthbred Coffee Studio Manager Administration Console. Monitor daily sales, unresolved alerts, inventory logs, and performance metrics.">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="<?= asset('css/manager.css') ?>">
+    <link rel="stylesheet" href="<?= asset('css/manager.css') ?>?v=<?= time() ?>">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </head>
 <body>
@@ -40,13 +40,13 @@
 
             <h3 class="mgr-nav-heading">OPERATIONS</h3>
             <ul class="mgr-nav-list">
-                <li class="mgr-nav-item" onclick="window.location.href='/Earthbred/backend/public/shift-notes'">
+                <li class="mgr-nav-item" onclick="window.location.href='/Earthbred/backend/public/manager/shift-notes'">
                     <i class="fa-solid fa-note-sticky mgr-nav-icon"></i> Shift Notes
                 </li>
-                <li class="mgr-nav-item" onclick="alert('Sales Reports are fully integrated on the main dashboard charts below.')">
+                <li class="mgr-nav-item" onclick="window.location.href='/Earthbred/backend/public/manager/sales-report'">
                     <i class="fa-solid fa-file-invoice-dollar mgr-nav-icon"></i> Sales Reports
                 </li>
-                <li class="mgr-nav-item" onclick="window.location.href='/Earthbred/backend/public/inventory'">
+                <li class="mgr-nav-item" onclick="window.location.href='/Earthbred/backend/public/manager/inventory'">
                     <i class="fa-solid fa-boxes-stacked mgr-nav-icon"></i> Inventory
                 </li>
             </ul>

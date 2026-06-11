@@ -581,3 +581,92 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+/* ============================================================
+   SHIFT NOTES MANAGER CONSOLE STYLES
+   ============================================================ */
+.filter-buttons-container {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background-color: var(--cream-card);
+    border: 1.5px solid var(--cream-border);
+    color: var(--text-mid);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 8px 18px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.filter-btn:hover {
+    background-color: var(--cream-hover);
+    color: var(--brand-primary);
+}
+
+.filter-btn.active {
+    background-color: var(--brand-primary);
+    border-color: var(--brand-primary);
+    color: #ffffff;
+}
+
+/* Note Card specific styles */
+.mgr-note-card {
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.mgr-note-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(44, 26, 20, 0.06) !important;
+}
+
+/* Category Badge Colors */
+.category-tag.tag-general {
+    background-color: #e3f2fd;
+    color: #1565c0;
+    border: 1px solid #bbdefb;
+}
+
+.category-tag.tag-equipment {
+    background-color: #fff3e0;
+    color: #ef6c00;
+    border: 1px solid #ffe0b2;
+}
+
+.category-tag.tag-complaint {
+    background-color: #ffebee;
+    color: #c62828;
+    border: 1px solid #ffcdd2;
+}
+
+.category-tag.tag-task {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #c8e6c9;
+}
+
+.resolve-btn {
+    background-color: var(--green);
+    color: #ffffff;
+    border: none;
+    padding: 8px 20px;
+    border-radius: var(--radius-sm);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.82rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: background-color var(--transition);
+}
+
+.resolve-btn:hover {
+    background-color: #25632a;
+}

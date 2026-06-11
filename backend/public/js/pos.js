@@ -285,5 +285,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 2000);
     }
 
+    // =============================================
+    // URL Filter Parameter Handler
+    // =============================================
+    const urlParams = new URLSearchParams(window.location.search);
+    const initialFilter = urlParams.get('filter');
+    if (initialFilter) {
+        const targetItem = Array.from(menuItems).find(item => item.getAttribute('data-filter') === initialFilter);
+        if (targetItem) {
+            targetItem.click();
+        }
+    }
+
 });
 

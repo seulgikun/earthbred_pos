@@ -48,8 +48,15 @@ Route::get('/inventory', function () {
     return view('inventory');
 });
 
+Route::get('/manager/inventory', function () {
+    return view('inventory', ['isManager' => true]);
+});
+
 Route::get('/manager', [ManagerController::class, 'index']);
+Route::get('/manager/shift-notes', [ManagerController::class, 'shiftNotes']);
+Route::get('/manager/sales-report', [ManagerController::class, 'salesReport']);
 Route::get('/api/manager/stats', [ManagerController::class, 'getStats']);
+Route::get('/api/manager/sales-data', [ManagerController::class, 'getSalesData']);
 
 Route::get('/api/inventory', [InventoryController::class, 'index']);
 Route::post('/api/inventory', [InventoryController::class, 'storeItem']);
